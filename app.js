@@ -68,5 +68,18 @@ const app = new Vue({
       this.type = event.target.value;
       console.log('this.type',this.type);
     }
+  },
+  computed: {
+    // computed properties ONLY refresh when they needto
+    // They are a more efficient version of explicitly executed methods
+    uniqueItemsList: function() {
+      const types = [];
+      this.mediaList.forEach((item)=> {
+        if(!types.includes(item.type)){
+          types.push(item.type);
+        }
+      });
+      return types;
+    }
   }
 });
