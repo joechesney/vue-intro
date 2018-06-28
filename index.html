@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,24 @@
   <link rel='stylesheet' type='text/css' href='styles.css'>
   <title>Vue</title>
 </head>
+
 <body>
   <div id="helloVue">
-    <h1>{{title}}</h1>
-    <p>{{message}}</p>
+    <h1 >{{title}}</h1>
+    <p>{{ message }}</p>
   </div>
   <div id="example">
-    <h1>{{title + ', ' + name.toUpperCase() }}</h1>
+    <h1>{{ title + ', ' + name.toUpperCase() }}</h1>
+    <img v-bind:src="img.src" v-bind:alt="img.src">
     <p v-text="message"></p>
+  </div>
+  <div id="book">
+    <h1 v-on:click="sayHello">{{ title }}</h1>
+    <p>{{ author }}</p>
+    <p>{{ summary }}</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
