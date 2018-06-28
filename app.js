@@ -54,11 +54,19 @@ const app = new Vue({
   el: '#media-list',
   data: {
     title: 'Treehouse Public Library',
-    mediaList: media
+    mediaList: media,
+    type: "",
   },
   methods: {
     toggleDetails: function(media) {
       media.showDetail = !media.showDetail;
+    },
+    filterList: function() {
+      // the event object is automatically passed into every method
+      // it is called 'event' exactly
+      console.log('event',event);
+      this.type = event.target.value;
+      console.log('this.type',this.type);
     }
   }
 });
