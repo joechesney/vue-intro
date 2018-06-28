@@ -64,9 +64,7 @@ const app = new Vue({
     filterList: function() {
       // the event object is automatically passed into every method
       // it is called 'event' exactly
-      console.log('event',event);
       this.type = event.target.value;
-      console.log('this.type',this.type);
     }
   },
   computed: {
